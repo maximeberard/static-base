@@ -9,6 +9,8 @@ requirejs.config({
         isMobile: "/bower_components/isMobile/isMobile.min",
         actual: "/bower_components/jquery.actual/jquery.actual.min",
         Hammer: "/bower_components/hammerjs/hammer.min",
+        loglevel: "/bower_components/loglevel/dist/loglevel.min",
+        Lazyload: '/bower_components/vanilla-lazyload/dist/lazyload',
         // Utils functions and classes
         "utils/utils": "/bower_components/starting-blocks/dist/utils/utils",
         "utils/polyfills": "/bower_components/starting-blocks/dist/utils/polyfills",

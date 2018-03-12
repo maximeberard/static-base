@@ -42,7 +42,7 @@ define(["exports", "abstract-page"], function (exports, _abstractPage) {
         function Page(router, id, context, type, isHome) {
             _classCallCheck(this, Page);
 
-            return _possibleConstructorReturn(this, Object.getPrototypeOf(Page).call(this, router, id, context, type, isHome));
+            return _possibleConstructorReturn(this, (Page.__proto__ || Object.getPrototypeOf(Page)).call(this, router, id, context, type, isHome));
         }
 
         return Page;

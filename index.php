@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
         <title>StaticBase</title>
         <meta name="description" content="StaticBase" />
@@ -15,10 +15,12 @@
         <meta name="theme-color" content="#000000">
 
         <!-- inject:css -->
-        <link rel="stylesheet" href="css/style-6136bf8701.css">
+        <link rel="stylesheet" href="css/style-1d40712449.css">
         <!-- endinject -->
+
+        <script src="/vendor/modernizr-custom.js"></script>
     </head>
-    <body class="no-js">
+    <body>
         
         <div id="svg-sprite" style="display:none;">
             <?php include('svg/sprite.php'); ?>
@@ -49,7 +51,7 @@
         </script>
 
         <!-- inject:js -->
-        <script data-main="build/app-1735071f82.min.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
+        <script data-main="build/app-523bb3f802.min.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
         <!-- endinject -->
     </body>
 </html>

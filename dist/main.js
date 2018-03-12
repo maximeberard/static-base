@@ -1,4 +1,4 @@
-define(["jquery", "TweenMax", "isMobile", "utils/utils", "utils/polyfills", "utils/gaTrackErrors", "nav", "router", "graphicLoader", "pages/page"], function (_jquery, _TweenMax, _isMobile, _utils, _polyfills, _gaTrackErrors, _nav, _router, _graphicLoader, _page) {
+define(["jquery", "TweenMax", "isMobile", "utils/utils", "utils/polyfills", "utils/gaTrackErrors", "common/nav", "router", "graphicLoader", "class-factory"], function (_jquery, _TweenMax, _isMobile, _utils, _polyfills, _gaTrackErrors, _nav, _router, _graphicLoader, _classFactory) {
   "use strict";
 
   var _jquery2 = _interopRequireDefault(_jquery);
@@ -13,7 +13,7 @@ define(["jquery", "TweenMax", "isMobile", "utils/utils", "utils/polyfills", "uti
     };
   }
 
-  // import {ContactBlock} from "blocks/contact-block";
+  // import {Page} from "pages/page";
 
   /**
    * 
@@ -28,10 +28,9 @@ define(["jquery", "TweenMax", "isMobile", "utils/utils", "utils/polyfills", "uti
   //     'StaticBase',
   //     '#fff',
   //     [
-  //         { name:'Rezo Zero', website:'www.rezo-zero.com' }
+  //          { name:'Maxime Bérard', website:'www.maximeberard.com' }
   //     ],
   //     [
-  //         { name:'roadiz', website:'www.roadiz.io' },
   //         { name:'GSAP', website:'www.greensock.com' }
   //     ],
   //     '#000'
@@ -74,17 +73,10 @@ define(["jquery", "TweenMax", "isMobile", "utils/utils", "utils/polyfills", "uti
    */
   var router = new _router.Router({
     homeHasClass: false,
-    ajaxEnabled: true,
+    ajaxEnabled: false,
     pageClass: 'page-container'
-  }, {
-    /*
-     * Routes are nodeType corresponding to
-     * ES6 modules
-     */
-    'page': _page.Page
-  }, // 'contactblock' : ContactBlock
-
-  // temp namespace is defined in your index.html
+  }, new _classFactory.ClassFactory(),
+  // temp namespace is defined in your Resources/views/base.twig.html
   temp.baseUrl, new _graphicLoader.GraphicLoader(), new _nav.Nav());
   router.initEvents();
   router.boot((0, _jquery2.default)('.page-container').eq(0), 'static', isHome);

@@ -17,7 +17,7 @@ var transformFunc = function (filepath) {
 gulp.task('inject', ['css', 'requirejs'], function () {
     var builtFiles = gulp.src(['build/*', 'css/vendor-*.css','css/style-*.css']);
 
-    return gulp.src('index.html')
+    return gulp.src('index.php')
         .pipe(inject(builtFiles, {
             transform: transformFunc
         }))
@@ -28,7 +28,7 @@ gulp.task('inject', ['css', 'requirejs'], function () {
 gulp.task('inject-css', ['css'], function () {
     var builtFiles = gulp.src(['./css/vendor-*.css','./css/style-*.css'], {read: false});
 
-    return gulp.src('index.html')
+    return gulp.src('index.php')
         .pipe(inject(builtFiles, {
             transform: transformFunc
         }))

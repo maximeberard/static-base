@@ -4,11 +4,11 @@ import isMobile from "isMobile";
 import {Utils} from "utils/utils";
 import {polyfills} from "utils/polyfills";
 import {gaTrackErrors} from "utils/gaTrackErrors";
-import {Nav} from "nav";
+import {Nav} from "common/nav";
 import {Router} from "router";
 import {GraphicLoader} from "graphicLoader";
-import {Page} from "pages/page";
-// import {ContactBlock} from "blocks/contact-block";
+import {ClassFactory} from "class-factory";
+// import {Page} from "pages/page";
 
 /**
  * 
@@ -23,10 +23,9 @@ TweenLite.defaultEase = Expo.easeOut;
 //     'StaticBase',
 //     '#fff',
 //     [
-//         { name:'Rezo Zero', website:'www.rezo-zero.com' }
+//          { name:'Maxime Bérard', website:'www.maximeberard.com' }
 //     ],
 //     [
-//         { name:'roadiz', website:'www.roadiz.io' },
 //         { name:'GSAP', website:'www.greensock.com' }
 //     ],
 //     '#000'
@@ -72,18 +71,11 @@ if(navigator.userAgent.indexOf('MSIE') >= 0 ||
 const router = new Router(
     {
         homeHasClass: false,
-        ajaxEnabled: true,
+        ajaxEnabled: false,
         pageClass:'page-container'
     },
-    {
-        /*
-         * Routes are nodeType corresponding to
-         * ES6 modules
-         */
-        'page' : Page,
-        // 'contactblock' : ContactBlock
-    },
-    // temp namespace is defined in your index.html
+    new ClassFactory(),
+    // temp namespace is defined in your Resources/views/base.twig.html
     temp.baseUrl,
     new GraphicLoader(),
     new Nav()
