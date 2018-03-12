@@ -11,10 +11,10 @@ This repo is a **fresh start** to create a custom website (static adaptation of 
 Base theme uses *Gulp* and *Bower* to deal with front development files.
 We chose to use **ES6 javascript** transpiled with *Babel* and loaded via *RequireJS*.
 
-Then we externalized all the JS logic and routing system into https://github.com/rezozero/starting-blocks-framework
+Then we externalized all the JS logic and routing system into https://github.com/rezozero/starting-blocks
 so that your theme only host specific JS code and will be able to easily upgrade common JS features.
 
-We encourage to read *Page-Block* README: https://github.com/rezozero/starting-blocks-framework/blob/master/README.md
+We encourage to read *Page-Block* README: https://github.com/rezozero/starting-blocks/blob/master/README.md
 to understand how we route and synchronize our *Twig* generated DOM with our ES6 scripts. 
 
 ### Bootstrap
