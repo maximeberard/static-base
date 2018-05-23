@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" itemscope itemtype="http://schema.org/WebPage">
     <head>
         <title>StaticBase</title>
         <meta name="description" content="StaticBase" />
@@ -42,6 +42,7 @@
                 </div>
             </div>
             <div id="ajax-container"></div>
+        </div>
 
         <script>
             var temp = {
