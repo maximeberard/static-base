@@ -2,20 +2,8 @@
    NAV
 \*------------------------------------*/
 
-
-/*
- * Styles for nav
- */
-
-/*------------------------------------*\
-   NAV
-\*------------------------------------*/
-
-
-/*
- * Styles for nav
- */
 @navbar-height: 50px;
+@nav-height : 68px;
 
 // --- Navbar --- //
 #navbar{
@@ -25,10 +13,6 @@
     background: @white;
     border-bottom:1px solid #DADADA;
     z-index:55;
-}
-#main-container {
-    position: relative;
-    margin-top: @navbar-height;
 }
 
 #nav-btn{
@@ -81,6 +65,13 @@
     background: @white;
     z-index:50;
     transform:translateX(-100%);
+
+    @media (min-width: @screen-sm-min) {
+        right:0; bottom:initial;
+        width:auto; height:@nav-height;
+        transform:none;
+        border-bottom: 1px solid #DADADA;
+    }
 }
 
 #nav-list{
@@ -89,80 +80,69 @@
     margin:0;
     padding:80px 15px 10px;
     width:100%;
+
+    @media (min-width: @screen-sm-min) {
+        float: left;
+        width:auto;
+        padding:0;
+    }
 }
+
+
+.menu-item{
+    position: relative;
+    display: block;
+
+    @media (min-width: @screen-sm-min) {
+        display:inline-block; vertical-align: top;
+    }
+
+    &.current-menu-item a{
+        cursor:default;
+    }
+
+    &.current-menu-item a, a:hover, a:focus{
+        color: @black;
+
+        @media (min-width: @screen-sm-min) {
+            color: @red;
+        }
+    }
+
+    a{
+        position: relative;
+        display: block;
+        margin:0 0 12px;
+        padding:0 7px 8px 7px;
+        font-size:17px; line-height:17px;
+        color: lighten(@black, 30%);
+        transition:0.6s color @easeOutExpo;
+
+        &.active{
+            cursor: default;
+        }
+
+        &:hover, &.active{
+            color: @black;
+        }
+
+        @media (min-width: @screen-sm-min) {
+            display: inline-block; vertical-align: top;
+            padding: 26px 2px;
+            margin: 0px 13px;
+            line-height:17px;
+        }
+    }
+}
+
+// --- Lang --- //
 
 #nav-lang{
     position: relative;
     float:left;
     margin:0; padding:0 15px;
-}
 
-.nav-item{
-    position: relative;
-    display: block;
-}
-
-.nav-link{
-    position: relative;
-    display: block;
-}
-
-.nav-link{
-    margin:0 0 12px;
-    padding:0 7px 8px 7px;
-    font-size:17px; line-height:17px;
-    color: lighten(@black, 30%);
-    transition:0.6s color @easeOutExpo;
-
-    &.active{
-        cursor: default;
-    }
-
-    &:hover, &.active{
-        color: @black;
-    }
-}
-
-.nav-link-home {
-
-}
-
-
-/*
- * Responsive
- */
-
-@media (min-width: @screen-sm-min) {
-
-    #nav {
-        right:0; bottom:initial;
-        width:auto; height:68px;
-        transform:none;
-        border-bottom: 1px solid #DADADA;
-    }
-    #main-container {
-        position: relative;
-        margin-top: 68px;
-    }
-
-    #nav-list{
-        float: left;
-        width:auto;
-        padding:0;
-    }
-
-    #nav-lang{
+    @media (min-width: @screen-sm-min) {
         float: right;
-    }
-
-    .nav-item{
-        display:inline-block; vertical-align: top;
-    }
-
-    .nav-link{
-        display: inline-block; vertical-align: top;
-        padding: 26px 2px;
-        margin: 0px 13px;
-        line-height:17px;
     }
 }
