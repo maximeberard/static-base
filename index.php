@@ -44,11 +44,59 @@
             <div id="ajax-container"></div>
         </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
+
         <script>
             var temp = {
                 'baseUrl':window.location.href
             };
             // document.body.className = "";
+
+
+            // Cookie consent
+            window.addEventListener('load', function () {
+                window.cookieconsent.initialise({
+                    container: document.getElementById("cookiesconsent"),
+                    // location: true,
+                    // revokable: false,
+                    // law: {
+                    //     regionalLaw: false,
+                    // },
+                    content: {
+                        message: "En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies à des fins de mesures d’audience.",
+                        dismiss: "Fermer",
+                        link: "En savoir plus",
+                        href: "legals"
+                    }
+                })
+            });
+
+            // Browser update — www.browser-update.org/customize.html
+            var $buoop = {
+                vs: { i:9, f: 15, o: 12.1, s: 5.1, c: 2 },
+                text:'Votre navigateur est périmé. Il contient des failles de sécurité et pourrait ne pas afficher certaines fonctionalités de ce site internet. <a href="http://browser-update.org/update-browser.html" target="_blank">Découvrez comment mettre votre navigateur à jour</a>'
+            };
+
+            function $buo_f(){
+                var e = document.createElement("script");
+                e.src = "https://browser-update.org/update.js";
+                document.body.appendChild(e);
+            }
+
+            try {
+                document.addEventListener("DOMContentLoaded", $buo_f,false)
+            } catch (e){
+                window.attachEvent("onload", $buo_f)
+            }
+
+            // Analytics
+            // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            // ga('create', 'UA-XXX-X', 'auto');
+            // ga('send', 'pageview');
         </script>
 
         <!-- inject:js -->
