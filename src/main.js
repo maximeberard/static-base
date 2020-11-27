@@ -7,6 +7,7 @@ import {gaTrackErrors} from "utils/gaTrackErrors";
 import {Nav} from "common/nav";
 import {Router} from "router";
 import {GraphicLoader} from "graphicLoader";
+// import {Loader} from "common/loader";
 import {ClassFactory} from "class-factory";
 // import {Page} from "pages/page";
 
@@ -78,6 +79,7 @@ const router = new Router(
     // temp namespace is defined in your Resources/views/base.twig.html
     temp.baseUrl,
     new GraphicLoader(),
+    // new Loader(),
     new Nav()
 );
 router.initEvents();
