@@ -6,7 +6,7 @@ var del = require('del');
 var rename = require("gulp-rename");
 
 gulp.task('clean-svg', function () {
-    return del(['./svg/sprite.svg'], {
+    return del(['./svg/sprite.php'], {
         force: true
     });
 });
@@ -53,6 +53,6 @@ gulp.task('svgstore', ['clean-svg'], function () {
             id:'base-icon-',
             inlineSvg: true
         }))
-        .pipe(rename("sprite.svg"))
+        .pipe(rename("sprite.php"))
         .pipe(gulp.dest('./svg'));
 });

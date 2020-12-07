@@ -1,18 +1,44 @@
-<!DOCTYPE html>
+<?php 
+    $devMode = ($_SERVER['HTTP_HOST'] == 'localhost:8000');
+    $baseUrl = 'http://'.$_SERVER['HTTP_HOST'];
+    $siteName = 'StaticBase';
+    $title = 'StaticBase';
+    $desc = 'desc';
+    $shareImage = $baseUrl.'/img/share-image.png';
+?><!DOCTYPE html>
 <html lang="en" class="no-js" itemscope itemtype="http://schema.org/WebPage">
     <head>
-        <title>StaticBase</title>
-        <meta name="description" content="StaticBase" />
+        <title><?php echo $title; ?></title>
+        <meta name="description" content="<?php echo $desc; ?>" />
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Favicon  -->
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#000000">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
 
-        <link rel="apple-touch-icon" sizes="128x128" href="/img/favicon-128x128.png">
-        <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/img/favicon-64x64.png" sizes="64x64">
-        <link rel="icon" type="image/png" href="/img/favicon-128x128.png" sizes="128x128">
-        <link rel="manifest" href="/img/manifest.json">
-        <meta name="msapplication-TileColor" content="#000000">
-        <meta name="theme-color" content="#000000">
+        <!-- Facebook  -->
+        <meta property="og:title" content="<?php echo $title; ?>" />
+        <meta property="og:site_name" content="<?php echo $siteName; ?>" />
+        <meta property="og:description" content="<?php echo $desc; ?>" />
+        <meta property="og:url" content="<?php echo $baseUrl; ?>" />
+        <meta property="og:image" content="<?php echo $shareImage; ?>" />
+        <meta property="og:type" content="website" />
+        <!-- Google plus  -->
+        <meta itemprop="name" content="<?php echo $title; ?>" />
+        <meta itemprop="description" content="<?php echo $desc; ?>" />
+        <meta itemprop="image" content="<?php echo $shareImage; ?>" />
+        <!-- Twitter  -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="<?php echo $title; ?>" />
+        <meta name="twitter:description" content="<?php echo $desc; ?>" />
+        <meta name="twitter:url" content="<?php echo $baseUrl; ?>" />
+        <meta name="twitter:image" content="<?php echo $shareImage; ?>" />
 
         <!-- inject:css -->
         <link rel="stylesheet" href="css/style-6e3951feb3.css">
@@ -48,10 +74,9 @@
 
         <script>
             var temp = {
-                'baseUrl':window.location.href
+                'baseUrl':window.location.href,
+                'devMode': <?php echo ($devMode) ? 'true' : 'false' ?>
             };
-            // document.body.className = "";
-
 
             // Cookie consent
             window.addEventListener('load', function () {
@@ -99,8 +124,14 @@
             // ga('send', 'pageview');
         </script>
 
+        <!-- JS scripts inclusions -->
+        <?php 
+        if(!$devMode){ ?>
         <!-- inject:js -->
-        <script data-main="build/app-fd5d76be15.min.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
+        <script data-main="build/app-4c2ae0df5c.min.js" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.22/require.min.js"></script>
         <!-- endinject -->
+        <?php }else{ ?>
+            <script data-main="/bootstrap.js" src="/bower_components/requirejs/require.js"></script>
+        <?php } ?>
     </body>
 </html>
