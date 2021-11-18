@@ -1,4 +1,6 @@
 {
+  "name": "StaticBase",
+  "version": "0.1.0",
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel-plugin-transform-es2015-modules-amd": "^6.6.0",
