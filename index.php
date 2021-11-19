@@ -69,6 +69,8 @@
             </div>
             <div id="ajax-container"></div>
         </div>
+        
+        <div id="cookiesconsent"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
 
